@@ -1,14 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+//NAMESPACE
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        Hello
-      </div>
-    )
-  }
-}
+const game = {};
 
-ReactDOM.render(<App />, document.getElementById('app'));
+//INIT
+game.init = function() {};
+
+//DOCREADY
+$(game.init);
