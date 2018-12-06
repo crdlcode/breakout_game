@@ -34,6 +34,20 @@ game.drawBall = function() {
     game.context.closePath();
 };
 
+// COLLISION DETECTION
+game.reverseX = function() {
+    return game.dx = -game.dx;
+};
+
+game.reverseY = function () {
+    return game.dy = -game.dy;
+};
+
+game.hitX = function() {
+    return (game.y + game.dy) < game.ballRadius ||(game.y + game.dy) > (game.canvas.height - game.ballRadius);
+}
+
+
 // ACTION!
 game.draw = function() {
 
@@ -44,6 +58,16 @@ game.draw = function() {
     // MOVE
     game.x += game.dx;
     game.y += game.dy;
+
+    // REFLECTION
+    if (game.hitX()) {
+        game.reverseX();
+    };
+    if (game.hitY()) {
+        game.reverseY();
+    }
+
+
 
     requestAnimationFrame(game.draw);
 };
