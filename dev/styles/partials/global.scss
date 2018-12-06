@@ -1,0 +1,11 @@
+body,
+canvas {
+    background: black;
+    margin: 5vh
+    // 5/100 of the current viewport width
+}
+
+canvas {
+    border: 1px solid white;
+    display: block;
+}
